@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `Admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Admin` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `NAME` varchar(30) NOT NULL,
-  `PASSWORD` varchar(30) NOT NULL,
-  PRIMARY KEY (`ID`)
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `pass` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -48,10 +48,10 @@ DROP TABLE IF EXISTS `Student`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Student` (
-  `ROLL_NO` int(5) NOT NULL,
-  `ST_NAME` varchar(30) NOT NULL,
-  `Present` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`ROLL_NO`)
+  `roll_no` int(5) NOT NULL,
+  `s_name` varchar(30) NOT NULL,
+  `attendance` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`roll_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
