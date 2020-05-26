@@ -12,17 +12,27 @@
 <body class="content">
     
     <!--Navigation bar-->
-    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">                                                     
-        <a class="navbar-brand mr-1" href="home.jsp">Attendance Management System</a>
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">                                               
+        <a class="navbar-brand mr-1">Attendance Management System</a>
+        
         <ul class="navbar-nav ml-auto">
             <li>
-              <button class="btn btn-info" data-toggle="modal" data-target="">Add Class</button>
+              <a class="btn btn-dark" href="/StartSystem" data-target="">Start System</a>
             </li>
             &nbsp;
             <li>
-              <button class="btn btn-info" data-toggle="modal" data-target="#NewStudent">Add Students</button>
+              <button class="btn btn-dark" data-toggle="modal" data-target="">Train Images</button>
             </li>
             &nbsp;
+            <li>
+              <button class="btn btn-dark" data-toggle="modal" data-target="">Add Class</button>
+            </li>
+            &nbsp;
+            <li>
+              <button class="btn btn-dark" data-toggle="modal" data-target="#NewStudent">Add Students</button>
+            </li>
+            &nbsp;
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="badge badge-danger">Profile</span>
@@ -87,9 +97,10 @@
               <h4 class="modal-title">Student Registration</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <form action="" method="POST">
-                
+            {% block content %}
+            <form action="/captureImages" method='POST'>
                 <!-- Modal body -->
+                {% csrf_token %}
                 <div class="modal-body">
                     <div class="form-group">
                       <label for="class">Select Class</label>
@@ -103,19 +114,22 @@
                     </div>
                     <div class="form-group">
                       <label for="Rollno">Roll No</label>
-                      <input type="text" class="form-control" id="" placeholder="Enter RollNo">
+                      <input type="text" class="form-control" id="" name="rollno" placeholder="Enter RollNo" required>
                     </div>
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" class="form-control" id="" placeholder="Enter Name">
+                      <input type="text" class="form-control" name="name" id="" placeholder="Enter Name" required>
                     </div>
                 </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                  <input type="submit" class="btn btn-success" data-dismiss="modal" value="Save">
-                </div>
+                <center>
+                <div class="form-group">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <!-- <a class="btn btn-info" name="" href="/captureImages">Capture Images & Save</a> -->
+                    <input type="submit" name="" class="btn btn-success" value="Capture Images & Save">
+                  </div>
+                </center>  
             </form>
+            {% endblock content %}
           </div>
         </div>
       </div>

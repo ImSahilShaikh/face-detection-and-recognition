@@ -20,5 +20,7 @@ from AMS import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.login,name="Login"),
-    path('adminLogin',views.adminLogin,name="adminLogin")
+    path('adminLogin',views.adminLogin,name="adminLogin"),
+    path('captureImages',views.captureImages),
+    path('StartSystem',views.StartSystem,name="StartSystem"),
 ]
